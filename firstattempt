@@ -1,0 +1,77 @@
+// Create a Husband class to store husband information
+class Husband {
+  constructor(name, birthDate, gender, address, email, phone, anniversary) {
+    this.name = name;
+    this.birthDate = birthDate;
+    this.gender = gender;
+    this.address = address;
+    this.email = email;
+    this.phone = phone;
+    this.anniversary = anniversary;
+    this.familyMembers = [];
+    this.preferences = {};
+  }
+
+  addFamilyMember(name, birthDate, email, phone, address) {
+    let member = {
+      name: name,
+      birthDate: birthDate,
+      email: email,
+      phone: phone,
+      address: address,
+    };
+    this.familyMembers.push(member);
+  }
+
+  setPreferences(category, items) {
+    this.preferences[category] = items;
+  }
+
+  getPreferences() {
+    return this.preferences;
+  }
+}
+
+// Create a new Husband object and fill out their information
+let husband = new Husband(
+  "John Smith",
+  "01/01/1980",
+  "Male",
+  "123 Main St",
+  "john.smith@example.com",
+  "123-456-7890",
+  "05/10/2010"
+);
+
+// Add family members to the husband object
+husband.addFamilyMember(
+  "Jane Smith",
+  "02/01/1985",
+  "jane.smith@example.com",
+  "555-555-5555",
+  "456 Main St"
+);
+
+// Set preferences for the husband object
+husband.setPreferences("be a better husband", [
+  "send flowers",
+  "plan a date night",
+  "do a chore for your spouse",
+]);
+husband.setPreferences("be a better employee", [
+  "complete all tasks on time",
+  "ask for feedback",
+  "be respectful to colleagues",
+]);
+husband.setPreferences("be a better son or daughter", [
+  "call your parents once a week",
+  "visit your parents monthly",
+  "send thoughtful gifts",
+]);
+
+// Get preferences for the husband object
+let preferences = husband.getPreferences();
+
+// Log the husband object and preferences to the console
+console.log(husband);
+console.log(preferences);
